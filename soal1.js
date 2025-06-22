@@ -22,8 +22,12 @@ console.log("ANSWER 2: ", resultTwo);
 
 // Ubah semua huruf kecil dalam array menjadi huruf besar
 let students = ["Tito", "arY", "Bostang"]
-let resultThree
-
+let resultThree = []
+ for (let index = 0; index < students.length; index++) {
+        let element = students[index];
+        resultThree.push(element.toUpperCase())
+ }
+console.log("ANSWER 3: ", resultThree);
 
 // Ambil hanya nama-nama orang yang umurnya di atas 18 tahun.
 // Ambil hanya orang yang panjang namanya lebih dari 5
@@ -33,7 +37,13 @@ const people = [
     { name: 'Bostang', age: 22 },
     { name: 'Cici', age: 17 }
 ];
-
+let resultFour = [];
+for (let index = 0; index < people.length; index++) {
+  if (people[index].age > 18 && people[index].name.length > 5) {
+    resultFour.push(people[index].name);
+  }
+}
+console.log("ANSWER 4: ", resultFour);
 
 // Hitung total harga semua barang
 const items = [
@@ -41,6 +51,12 @@ const items = [
     { name: 'Pen', price: 5000 },
     { name: 'Pencil', price: 3000 },
 ];
+let resultFive = 0;
+
+for (let index = 0; index < items.length; index++) {
+  resultFive += items[index].price;
+}
+console.log("ANSWER 5: ", resultFive);
   
 
 //Ambil hanya angka unik dari array (hapus duplikat).
