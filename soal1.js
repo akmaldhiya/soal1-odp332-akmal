@@ -52,7 +52,6 @@ const items = [
     { name: 'Pencil', price: 3000 },
 ];
 let resultFive = 0;
-
 for (let index = 0; index < items.length; index++) {
   resultFive += items[index].price;
 }
@@ -61,7 +60,17 @@ console.log("ANSWER 5: ", resultFive);
 
 //Ambil hanya angka unik dari array (hapus duplikat).
 const numbersThree = [1, 2, 2, 3, 4, 4, 5];
+let temp = 0
+let resultSix = [];
+for (let index = 0; index < numbersThree.length; index++) {
+     let element = numbersThree[index];
+     if (temp != element ) {
+        temp = element
+        resultSix.push(temp)
+     }
 
+}
+console.log("ANSWER 6: ", resultSix);
 
 // Ambil nama produk dengan harga tertinggi
 const products = [
@@ -73,7 +82,17 @@ const products = [
 
 // Buat kalimat dari array kata.
 const words = ['Belajar', 'array', 'itu', 'menyenangkan'];
+let resultSeven;
+let answerResultSeven = ""
+let tempPrice = 0
+for (let index = 0; index < products.length; index++) {
+     if ( products[index].price > tempPrice) {
+        tempPrice =  products[index].price
+        answerResultSeven =  products[index].name
+    }
+}
 
+console.log("ANSWER 7: ", answerResultSeven);
 
 // Ambil hanya 3 data pertama yang mengandung kata 'a' pada nama.
 const names = ['Aldo', 'Budi', 'Caca', 'Dinda', 'Eka', 'Fajar'];
