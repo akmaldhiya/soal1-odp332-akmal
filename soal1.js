@@ -1,11 +1,23 @@
 // Jumlahkan semua angka genap dalam array berikut
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
-let resultOne
-
+let resultOne = 0
+for (let index = 0; index < numbers.length; index++) {
+    const element = numbers[index];
+    if (element % 2 == 0 ){
+       resultOne = resultOne + element
+    } 
+}
+console.log("ANSWER 1: ", resultOne);
 
 const numbersTwo = [1, 2, 3, 4, 5, 6, 7, 8];
 //Tambahkan semua angka ganjil dalam array dan kembalikan hasilnya.
-let resultTwo
+let resultTwo = 0
+for (let index = 0; index < numbersTwo.length; index++) {
+    if (numbersTwo[index] % 2 !== 0){
+        resultTwo += numbersTwo[index];
+    }
+}
+console.log("ANSWER 2: ", resultTwo);
 
 
 // Ubah semua huruf kecil dalam array menjadi huruf besar
