@@ -78,10 +78,6 @@ const products = [
     { name: 'Phone', price: 8000000 },
     { name: 'Monitor', price: 3000000 },
 ];
-
-
-// Buat kalimat dari array kata.
-const words = ['Belajar', 'array', 'itu', 'menyenangkan'];
 let resultSeven;
 let answerResultSeven = ""
 let tempPrice = 0
@@ -91,16 +87,39 @@ for (let index = 0; index < products.length; index++) {
         answerResultSeven =  products[index].name
     }
 }
-
 console.log("ANSWER 7: ", answerResultSeven);
+
+
+// Buat kalimat dari array kata.
+const words = ['Belajar', 'array', 'itu', 'menyenangkan'];
+let answerEight = ""
+    for (let index = 0; index < words.length; index++) {
+        const element = words[index];
+        answerEight =  answerEight + " "+ element
+    }
+console.log("ANSWER 8: ", answerEight);
+
 
 // Ambil hanya 3 data pertama yang mengandung kata 'a' pada nama.
 const names = ['Aldo', 'Budi', 'Caca', 'Dinda', 'Eka', 'Fajar'];
+let answerNine = [];
+for (let index = 0; index < names.length; index++) {
+  const lowerCaseName = names[index].toLocaleLowerCase();
 
+  if (lowerCaseName.includes("a") && answerNine.length < 3) {
+    answerNine.push(names[index]);
+  }
+}
+console.log("ANSWER 9: ", answerNine);
 
 // Hitung total karakter dari semua nama dalam array.
 const namesTwo = ['Ani', 'Budi', 'Citra']; // 12 karakter
+let resultTen = 0;
 
+for (let index = 0; index < namesTwo.length; index++) {
+  resultTen += namesTwo[index].length;
+}
+console.log("ANSWER 10: ", resultTen);
 
 // Output: ['Tono (22)', 'Tara (25)']
 // Ubah array objek ke array string dengan format 'Nama (Umur)' dan hanya yang umurnya di atas 21.
@@ -109,4 +128,11 @@ const peopleTwo = [
     { name: 'Tini', age: 19 },
     { name: 'Tara', age: 25 },
 ];
-
+let resultEleven = [];
+ for (let index = 0; index < peopleTwo.length; index++) {
+        const age = peopleTwo[index].age;
+        if (age > 21) {
+            resultEleven.push(`${peopleTwo[index].name} (${peopleTwo[index].age})`)
+        }
+    }
+console.log("ANSWER 11: ", resultEleven);
