@@ -55,8 +55,20 @@ console.log(checkMature(-1)); // invalid input
  * Gunakan if-else dan function yang mengembalikan string
  */
 
-function scoreReport() {
-
+function scoreReport(inputScore) {
+ if (typeof inputScore !== "number" || inputScore < 0 || inputScore > 100) {
+    return "invalid input";
+  } else if (inputScore >= 90) {
+    return "A";
+  } else if (inputScore >= 80) {
+    return "B";
+  } else if (inputScore >= 70) {
+    return "C";
+  } else if (inputScore >= 60) {
+    return "D";
+  } else {
+    return "E";
+  }
 }
 
 console.log(scoreReport(90)); // A
@@ -75,8 +87,12 @@ console.log(scoreReport("sembilan puluh")); // invalid input
  * Buat program yang menampilkan semua bilangan ganjil dari 1 sampai 20 menggunakan for loop
  */
 
-function loopCheckOddEven() {
-
+function loopCheckOddEven(index) {
+ for (let index = 1; index <= 20; index++) {
+    if (index % 2 !== 0) {
+      console.log(`${index} => Bilangan Ganjil`);
+    }
+  }
 }
 
 loopCheckOddEven(5)
@@ -105,9 +121,7 @@ function totalValue(inputNumber) {
     }else {
         console.log("Invalid Number")
     }
-
 }
-
 console.log(totalValue(100)); // 5050
 console.log(totalValue("empat")); // invalid input
 
@@ -119,8 +133,19 @@ console.log(totalValue("empat")); // invalid input
  * Buat program yang menerima sebuah string, lalu hitung berapa banyak huruf vokal (a, e, i, o, u) di dalam string tersebut. Gunakan function untuk mengembalikan value total jumlah huruf vocal
  */
 
-function checkVowels() {
-
+function checkVowels(inputString) {
+ let count = 0;
+  if (typeof inputString !== "string") {
+    return "invalid input";
+  } else {
+    for (let index = 0; index < inputString.length; index++) {
+      const char = inputString[index].toLowerCase();
+      if (vocals.includes(char)) {
+        count++;
+      }
+    }
+  }
+  return count;
 }
 
 console.log(checkVowels("I Love JavaScript")); // 6
@@ -165,6 +190,12 @@ console.log(checkVowelConsonant('a')); // Output: "Vokal"
 
 function canVote(age) {
     // code di scope ini yaa
+     if (typeof age !== "number" || age < 0) {
+    return "invalid input";
+  } else {
+    return age >= 18;
+  }
+
 }
 
 console.log(canVote(20)); // true
@@ -193,6 +224,11 @@ console.log(canVote(17)); // false
  */
 
 function getDayName(dayNumber) {
+    if (typeof dayNumber !== "number" || dayNumber < 1 || dayNumber > 7) {
+    return "Output: Nomor hari tidak valid";
+  } else {
+    return `Output: ${daysOfWeek[dayNumber - 1]}`;
+  }
     // code disini
 }
 
@@ -230,7 +266,14 @@ console.log(reverseArray(['a', 'b', 'c'])); // Output: ['c', 'b', 'a']
  */
 
 const isPalindrome = (inputUser) => {
+ let reversedArray = [];
+  let splittedInput = inputUser.split("");
 
+  for (let index = splittedInput.length - 1; index >= 0; index--) {
+    reversedArray.push(splittedInput[index]);
+  }
+
+  return reversedArray.join("") === splittedInput.join("");
 }
 
 console.log(isPalindrome("kasur rusak")); // true
