@@ -4,10 +4,13 @@
  * Buatlah program untuk menentukan input bilangan apakah ganjil atau genap. Gunakan if-else dan function yang mengembalikan hasil "ganjil"/"genap"
  */
 
-function checkOddEven() {
-
+function checkOddEven(number) {
+if (typeof number !== "number") {
+    return "invalid input";
+  } else {
+    return number % 2 === 0 ? "genap" : "ganjil";
+  }
 }
-
 console.log(checkOddEven(5)); // ganjil
 console.log(checkOddEven(2)); // genap
 console.log(checkOddEven("enam")); // invalid input
@@ -20,10 +23,19 @@ console.log(checkOddEven("enam")); // invalid input
  * Buat sebuah program yang meminta usia seseorang, lalu gunakan if-else untuk menampilkan apakah seseorang tersebut sudah dewasa (>=18 tahun) atau belum. Gunakan if-else dan function yang mengembalikan string
  */
 
-function checkMature() {
-
+function checkMature(number) {
+  let status = " "
+    if (typeof number === "number" && number > 0){
+         if (number >=18 ){
+               status = "Dewasa"
+        }else{
+                status = "Belum dewasa"
+        }
+    }else {
+          status = "invalid input"
+    }
+ return status
 }
-
 console.log(checkMature(18)); // Dewasa
 console.log(checkMature(17)); // Belum dewasa
 console.log(checkMature("enam")); // invalid input
